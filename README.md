@@ -24,3 +24,4 @@ TODO:
   + [ ] compare size of storing new file instead of storing changes for it.
   + [ ] investigate binary formats / compression possibilities
   + [ ] investigate git structures changes and structures commit
+  + [ ] investigate git detecting rename of files
