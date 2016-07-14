@@ -1,0 +1,29 @@
+{
+  "name": "raccit",
+  "version": "1.0.0",
+  "description": "RACCIT VCSish",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudodoki/raccit.git"
+  },
+  "keywords": [],
+  "author": "sudodoki <smd.deluzion@gmail.com> (sudodoki.name)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudodoki/raccit/issues"
+  },
+  "homepage": "https://github.com/sudodoki/raccit",
+  "dependencies": {
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
+    "eslint-plugin-import": "^1.10.2"
+  }
+}
