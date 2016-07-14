@@ -12,20 +12,20 @@ RACCIT VCSish
   + [X] run strings-alignment on input and version from .raccit folder
   + [X] snapshot -> promote INDEX.json to commit, set new HEAD.json
   + [X] add to stage -> modify INDEX.json
-  + [ ] run string-alignment on input and version from .raccit folder with changes from commits applied to it
+  + [X] run string-alignment on input and version from .raccit folder with changes from commits applied to it
 + CLI support
   + [ ] init    – create .raccit folder
-  + [ ] -s      – run 'basic implementation'
-  + [ ] -h      – list .raccit commits
-  + [ ] -r <id> – undo every .raccit commit up to point of <id>
+  + [X] -s      – run 'basic implementation'
+  + [X] -h      – list .raccit commits
+  + [X] -r <id> – undo every .raccit commit up to point of <id>
 + Semi-advanced implementation
   + [ ] run on folders and subdirectories
   + [ ] optimize checks by tracking commits - file change. Consider
 + Advanced implementation
-  + [ ] investigate git structures changes and structures commit
+  + [X] investigate git structures changes and structures commit
   + [ ] try different strings alignment, store code for which 'scheme' is used  
-  + [ ] compare size of storing new file instead of storing changes for it.
-  + [ ] investigate binary formats / compression possibilities
+  + [!] compare size of storing new file instead of storing changes for it.
+  + [X] investigate binary formats / compression possibilities
   + [ ] investigate git detecting rename of files
 
 # Questions:
