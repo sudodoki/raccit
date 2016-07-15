@@ -20,7 +20,7 @@ RACCIT VCSish
   + [X] -r <id> – undo every .raccit commit up to point of <id>
 + Semi-advanced implementation
   + [ ] run on folders and subdirectories
-  + [ ] optimize checks by tracking commits - file change. Consider
+  + [ ] optimize checks by tracking commits instead of comparing file change
 + Advanced implementation
   + [X] investigate git structures changes and structures commit
   + [ ] try different strings alignment, store code for which 'scheme' is used  
@@ -43,7 +43,7 @@ RACCIT VCSish
   ```
 + [X] [Answer](#IDs-for-commits) investigate the ways git actually generates IDs for commits, that works in distributed environments
 + [ ] investigate git repack / etc pack-refs
-
++ [ ] effective way to compare two trees (current dir && from commit)
 # Answers
 
 ## IDs for commits
@@ -147,6 +147,9 @@ This is the first commit, so there are no parent commits, but later commits will
 + [git.scm Git Internals - Plumbing and Porcelain](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
 + [Linus Torvalds on git](https://www.youtube.com/watch?v=4XpnKHJAok8)
 + [gitrepository-layout(5) Manual Page](https://www.kernel.org/pub/software/scm/git/docs/gitrepository-layout.html)
+
++ [Graph isomorphism](https://en.wikipedia.org/wiki/Graph_isomorphism_problem)
++ [A congruence theorem for trees](http://projecteuclid.org/euclid.pjm/1103043674)
 
 + [Git is Simpler Than you think](http://nfarina.com/post/9868516270/git-is-simpler)
 + [Undoing things in git](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things#_undoing)

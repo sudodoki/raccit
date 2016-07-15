@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sudodoki/raccit",
   "dependencies": {
+    "chalk": "^1.1.3",
     "sha1": "^1.1.1"
   },
   "devDependencies": {
