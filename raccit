@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# TODO: remove in favour of 'bin'
+/usr/bin/env node /Users/sudodoki/Projects/prj-algo-course-project/raccit/index.js "$@"
