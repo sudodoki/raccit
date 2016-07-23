@@ -14,7 +14,7 @@ RACCIT VCSish
   + [X] add to stage -> modify INDEX.json
   + [X] run string-alignment on input and version from .raccit folder with changes from commits applied to it
 + CLI support
-  + [ ] init    – create .raccit folder
+  + [X] init    – create .raccit folder
   + [X] -s      – run 'basic implementation'
   + [X] -h      – list .raccit commits
   + [X] -r <id> – undo every .raccit commit up to point of <id>
