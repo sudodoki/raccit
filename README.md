@@ -8,19 +8,28 @@ RACCIT VCSish
 -r <id снимка> (rollback) - вернуться к состоянию директории, которое было на момент снимка с заданным id
 
 # TODO:
-+ Basic implementation
-  + [X] run strings-alignment on input and version from .raccit folder
-  + [X] snapshot -> promote INDEX.json to commit, set new HEAD.json
-  + [X] add to stage -> modify INDEX.json
-  + [X] run string-alignment on input and version from .raccit folder with changes from commits applied to it
-+ CLI support
-  + [X] init    – create .raccit folder
-  + [X] -s      – run 'basic implementation'
-  + [X] -h      – list .raccit commits
-  + [X] -r <id> – undo every .raccit commit up to point of <id>
++ [x] Basic implementation
++ [x] CLI support
++ Code changes:
+  + [x] split commands handlers
+  + [ ] new file structure for utils
+  ```
+  utils
+    diff-files
+      index.js
+      alignments
+      print
+    file-system
+    raccit
+      files
+      snapshots
+      objects
+    trees
+  ```
+  + [ ] add tests
 + Semi-advanced implementation
   + [ ] run on folders and subdirectories
-  + [ ] optimize checks by tracking commits instead of comparing file change
+  + [ ] optimize checks by tracking commits / file metainfo instead of comparing file change
 + Advanced implementation
   + [X] investigate git structures changes and structures commit
   + [ ] try different strings alignment, store code for which 'scheme' is used  
