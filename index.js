@@ -7,6 +7,7 @@ const snapshotCMD = '-s';
 const historyCMD = '-h';
 const resetCMD = '-r';
 const addCMD = 'add';
+const initCMD = 'init';
 if (!operation) {
   console.log('Available Commands: ', [ // eslint-disable-line no-console
     statusCMD,
@@ -52,4 +53,8 @@ if (operation === resetCMD) {
     ID = mode;
   }
   run.reset(mode, ID);
+}
+
+if (operation === initCMD) {
+  run.init();
 }
