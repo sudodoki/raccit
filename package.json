@@ -22,9 +22,13 @@
     "sha1": "^1.1.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.0.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-config-airbnb-base": "^4.0.0",
-    "eslint-plugin-import": "^1.10.2"
+    "eslint-plugin-import": "^1.10.2",
+    "mocha": "^2.5.3",
+    "mock-fs": "^3.11.0",
+    "sinon": "^1.17.5"
   }
 }
