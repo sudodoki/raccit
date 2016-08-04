@@ -4,6 +4,10 @@
   "description": "RACCIT VCSish",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./",
+    "test": "npm run lint && npm run mocha",
+    "mocha": "mocha -R nyan",
+    "mocha:dev": "npm run mocha -- -w",
     "test": "eslint ./"
   },
   "repository": {
