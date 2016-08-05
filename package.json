@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./",
-    "test": "npm run lint && npm run mocha",
-    "mocha": "mocha -R nyan",
+    "mocha": "mocha -R nyan --recursive",
     "mocha:dev": "npm run mocha -- -w",
-    "test": "eslint ./"
+    "test": "npm run mocha && npm run lint"
   },
   "repository": {
     "type": "git",
