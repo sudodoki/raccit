@@ -66,6 +66,11 @@ describe('utils/trees', () => {
     it('should accept tree and path', () => {
       expect(trees.findSubtree.bind(null, sampleTree, [])).not.to.throw;
     });
+    it('should return root node if requested', () => {
+      const result = trees.findSubtree(sampleTree, [rootNode.path]);
+      expect(result).to.eql(sampleTree);
+    });
+
     it('should return matching node if present (shallow)', () => {
       const result = trees.findSubtree(sampleTree, [rootNode.path, node1.path]);
       expect(result).to.eql(node1);
@@ -80,8 +85,12 @@ describe('utils/trees', () => {
         children: [Object.assign({}, node3)],
       }));
     });
-    it('should return null for non-existent path', () => {
+    it('should return null for non-existent path (wrong from the start)', () => {
       const result = trees.findSubtree(sampleTree, [node2.path]);
+      expect(result).to.equal(null);
+    });
+    it('should return null for non-existent path', () => {
+      const result = trees.findSubtree(sampleTree, [rootNode.path, 'someOtherPath', 'etc']);
       expect(result).to.equal(null);
     });
     it('should return null for empty trees', () => {
