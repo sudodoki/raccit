@@ -16,13 +16,16 @@ describe('utils/trees', () => {
     path: 'someFile',
     content: 'anotherhash',
   };
-  const sampleTree = Object.assign({}, rootNode, {
-    children: [
-      Object.assign({}, node1),
-      Object.assign({}, node2, {
-        children: [Object.assign({}, node3)],
-      }),
-    ],
+  let sampleTree;
+  beforeEach(() => {
+    sampleTree = Object.assign({}, rootNode, {
+      children: [
+        Object.assign({}, node1),
+        Object.assign({}, node2, {
+          children: [Object.assign({}, node3)],
+        }),
+      ],
+    });
   });
   describe('#bfs', () => {
     it('should be defined', () => {
@@ -106,5 +109,79 @@ describe('utils/trees', () => {
     it('should accept tree and path', () => {
       expect(trees.createSubtree.bind(null, sampleTree, ['./', 'someNewFolder', 'someNewFile'])).not.to.throw;
     });
+    it('should create nodes when path does not match existing', () => {
+      trees.createSubtree(sampleTree, [rootNode.path, 'someNewFolder', 'someNewFile']);
+      expect(sampleTree).to.eql(Object.assign({}, rootNode, {
+        children: [
+          Object.assign({}, node1),
+          Object.assign({}, node2, {
+            children: [Object.assign({}, node3)],
+          }),
+          {
+            path: 'someNewFolder',
+            children: [{
+              path: 'someNewFile',
+              children: [],
+            }],
+          },
+        ],
+      }));
+    });
+    it('should not create nodes when path matches existing', () => {
+      trees.createSubtree(sampleTree, [rootNode.path, node2.path, node3.path]);
+      expect(sampleTree).to.eql(sampleTree);
+    });
   });
+
+  describe('#setInTree', () => {
+    it('should be defined', () => {
+      expect(trees.setInTree).to.be.ok;
+    });
+    it('should accept tree, path and content', () => {
+      expect(trees.setInTree.bind(null, sampleTree, [], 'something')).not.to.throw;
+    });
+
+    it('given existing path, should overwrite content', () => {
+      trees.setInTree(sampleTree, [rootNode.path, node1.path], 'something');
+      expect(sampleTree).to.eql(Object.assign({}, rootNode, {
+        children: [
+          Object.assign({}, {
+            path: node1.path,
+            content: 'something',
+          }),
+          Object.assign({}, node2, {
+            children: [Object.assign({}, node3)],
+          }),
+        ],
+      }));
+    });
+
+    it('given existing path with children, should remove children', () => {
+      trees.setInTree(sampleTree, [rootNode.path, node2.path], 'something');
+      expect(sampleTree).to.eql(Object.assign({}, rootNode, {
+        children: [
+          Object.assign({}, node1),
+          Object.assign({}, {
+            path: node2.path,
+            content: 'something',
+          }),
+        ],
+      }));
+    });
+
+    it('given non-existing path, will create it', () => {
+      const result = trees.setInTree({ path: rootNode.path, children: [] }, [rootNode.path, 'someNewFile'], 'heythere');
+      expect(result).to.eql({
+        path: rootNode.path,
+        children: [
+          {
+            path: 'someNewFile',
+            content: 'heythere',
+          },
+        ],
+      });
+    });
+  });
+
+
 });
